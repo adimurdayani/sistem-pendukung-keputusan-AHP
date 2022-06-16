@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Apr 2022 pada 02.58
+-- Waktu pembuatan: 16 Jun 2022 pada 15.54
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.3.31
 
@@ -35,6 +35,15 @@ CREATE TABLE `alternatif` (
   `id_user` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `alternatif`
+--
+
+INSERT INTO `alternatif` (`id`, `alternatif_id`, `nama`, `bobot`, `id_user`) VALUES
+(1, 'A1', 'Frekuensi Penggenangan', NULL, 17),
+(2, 'A2', 'Faktor Lingkungan', NULL, 17),
+(3, 'A3', 'Jenis Bibit', NULL, 17);
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +58,15 @@ CREATE TABLE `baris_dua` (
   `jumlah` float DEFAULT NULL,
   `user_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `baris_dua`
+--
+
+INSERT INTO `baris_dua` (`id`, `nilai`, `nilai_dua`, `nilai_tiga`, `jumlah`, `user_id`) VALUES
+(1, 0.2, 0.2, 0.7, 1.1, 17),
+(3, 1, 1, 1, 3, 17),
+(4, 1.4, 5, 5, 11.4, 17);
 
 -- --------------------------------------------------------
 
@@ -65,6 +83,15 @@ CREATE TABLE `baris_dua_alternatif` (
   `user_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `baris_dua_alternatif`
+--
+
+INSERT INTO `baris_dua_alternatif` (`id`, `nilai`, `nilai_dua`, `nilai_tiga`, `jumlah`, `user_id`) VALUES
+(4, 0.33, 0.33, 0.66, 1.32, 17),
+(5, 0.99, 1, 0.99, 2.98, 17),
+(6, 1.65, 3, 3, 7.65, 17);
+
 -- --------------------------------------------------------
 
 --
@@ -79,6 +106,15 @@ CREATE TABLE `baris_satu` (
   `jumlah` float DEFAULT NULL,
   `user_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `baris_satu`
+--
+
+INSERT INTO `baris_satu` (`id`, `nilai`, `nilai_dua`, `nilai_tiga`, `jumlah`, `user_id`) VALUES
+(1, 1, 1, 0.98, 2.98, 17),
+(2, 5, 5, 1.4, 11.4, 17),
+(3, 7, 25, 7, 39, 17);
 
 -- --------------------------------------------------------
 
@@ -95,6 +131,15 @@ CREATE TABLE `baris_satu_alternatif` (
   `user_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `baris_satu_alternatif`
+--
+
+INSERT INTO `baris_satu_alternatif` (`id`, `nilai`, `nilai_dua`, `nilai_tiga`, `jumlah`, `user_id`) VALUES
+(1, 1, 0.99, 1, 2.99, 17),
+(2, 3, 3, 1.65, 7.65, 17),
+(3, 5, 9, 5, 19, 17);
+
 -- --------------------------------------------------------
 
 --
@@ -110,6 +155,15 @@ CREATE TABLE `baris_tiga` (
   `user_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `baris_tiga`
+--
+
+INSERT INTO `baris_tiga` (`id`, `nilai`, `nilai_dua`, `nilai_tiga`, `jumlah`, `user_id`) VALUES
+(2, 0.14, 0.04, 0.14, 0.32, 17),
+(3, 0.7, 0.2, 0.2, 1.1, 17),
+(4, 0.98, 1, 1, 2.98, 17);
+
 -- --------------------------------------------------------
 
 --
@@ -124,6 +178,15 @@ CREATE TABLE `baris_tiga_alternatif` (
   `jumlah` float DEFAULT NULL,
   `user_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `baris_tiga_alternatif`
+--
+
+INSERT INTO `baris_tiga_alternatif` (`id`, `nilai`, `nilai_dua`, `nilai_tiga`, `jumlah`, `user_id`) VALUES
+(4, 3, 0.1089, 0.2, 3.3089, 17),
+(5, 0.6, 0.33, 0.33, 1.26, 17),
+(6, 1, 0.99, 1, 2.99, 17);
 
 -- --------------------------------------------------------
 
@@ -141,6 +204,15 @@ CREATE TABLE `evn_normalisasi` (
   `user_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `evn_normalisasi`
+--
+
+INSERT INTO `evn_normalisasi` (`id`, `nilai`, `nilai_dua`, `nilai_tiga`, `total`, `evn`, `user_id`) VALUES
+(1, 2.98, 11.4, 39, 53.38, 0.728439, 17),
+(2, 1.1, 3, 11.4, 15.5, 0.211517, 17),
+(3, 0.32, 1.1, 2.98, 4.4, 0.0600437, 17);
+
 -- --------------------------------------------------------
 
 --
@@ -156,6 +228,15 @@ CREATE TABLE `evn_normalisasi_alternatif` (
   `evn` float DEFAULT NULL,
   `user_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `evn_normalisasi_alternatif`
+--
+
+INSERT INTO `evn_normalisasi_alternatif` (`id`, `nilai`, `nilai_dua`, `nilai_tiga`, `total`, `evn`, `user_id`) VALUES
+(6, 2.99, 7.65, 19, 29.64, 0.639222, 17),
+(7, 1.32, 2.98, 7.65, 11.95, 0.257716, 17),
+(8, 3.3089, 1.26, 2.99, 7.5589, 0.153796, 17);
 
 -- --------------------------------------------------------
 
@@ -230,7 +311,8 @@ CREATE TABLE `jenis_tanah` (
 
 INSERT INTO `jenis_tanah` (`id`, `nama`, `keterangan`, `created_at`) VALUES
 (2, 'Berpasir', 'tanah berpasir', NULL),
-(3, 'Lumpur Berpasir', 'tanah berlumpur dan berpasir', NULL);
+(3, 'Lumpur Berpasir', 'tanah berlumpur dan berpasir', NULL),
+(4, 'Lumpur', 'lumpur', NULL);
 
 -- --------------------------------------------------------
 
@@ -245,6 +327,15 @@ CREATE TABLE `kriteria` (
   `bobot` float DEFAULT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kriteria`
+--
+
+INSERT INTO `kriteria` (`id`, `kriteria_id`, `nama`, `bobot`, `id_user`) VALUES
+(1, 'C1', 'Frekuensi Penggenangan', NULL, 17),
+(2, 'C1', 'Kekuatan Ombak & Angin', NULL, 17),
+(3, 'C1', 'Kandungan Lumpur', NULL, 17);
 
 -- --------------------------------------------------------
 
@@ -301,6 +392,21 @@ CREATE TABLE `perbandingan` (
   `id_user` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `perbandingan`
+--
+
+INSERT INTO `perbandingan` (`id`, `id_kriteria`, `id_kriteria_dua`, `nilai_kriteria`, `id_user`) VALUES
+(15, 1, 1, 1, 17),
+(16, 1, 2, 5, 17),
+(17, 1, 3, 7, 17),
+(18, 2, 1, 0.2, 17),
+(19, 2, 2, 1, 17),
+(20, 2, 3, 5, 17),
+(21, 3, 1, 0.14, 17),
+(22, 3, 2, 0.2, 17),
+(23, 3, 3, 1, 17);
+
 -- --------------------------------------------------------
 
 --
@@ -314,6 +420,21 @@ CREATE TABLE `perbandingan_dua` (
   `nilai_alternatif` float DEFAULT NULL,
   `id_user` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `perbandingan_dua`
+--
+
+INSERT INTO `perbandingan_dua` (`id`, `id_alternatif`, `id_alternatif_dua`, `nilai_alternatif`, `id_user`) VALUES
+(17, 1, 1, 1, 17),
+(18, 1, 2, 3, 17),
+(19, 1, 3, 5, 17),
+(20, 2, 1, 0.33, 17),
+(21, 2, 2, 1, 17),
+(22, 2, 3, 3, 17),
+(23, 3, 1, 0.2, 17),
+(24, 3, 2, 0.33, 17),
+(25, 3, 3, 1, 17);
 
 -- --------------------------------------------------------
 
@@ -329,6 +450,13 @@ CREATE TABLE `rasio_konsistensi` (
   `user_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `rasio_konsistensi`
+--
+
+INSERT INTO `rasio_konsistensi` (`id`, `emaks`, `ci`, `cr`, `user_id`) VALUES
+(1, 3.06808, 0.0340409, 0.0586912, 17);
+
 -- --------------------------------------------------------
 
 --
@@ -342,6 +470,13 @@ CREATE TABLE `rasio_konsistensi_alternatif` (
   `cr` float DEFAULT NULL,
   `user_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `rasio_konsistensi_alternatif`
+--
+
+INSERT INTO `rasio_konsistensi_alternatif` (`id`, `emaks`, `ci`, `cr`, `user_id`) VALUES
+(1, 7.10422, 2.05211, 3.53812, 17);
 
 -- --------------------------------------------------------
 
@@ -363,7 +498,8 @@ CREATE TABLE `tb_visitor` (
 --
 
 INSERT INTO `tb_visitor` (`id`, `ip`, `date`, `hits`, `online`, `time`) VALUES
-(1, '::1', '2022-04-17', 3, '1650156001', '2022-04-17 02:09:05');
+(1, '::1', '2022-04-17', 3, '1650156001', '2022-04-17 02:09:05'),
+(2, '::1', '2022-06-16', 13, '1655387591', '2022-06-16 14:43:20');
 
 -- --------------------------------------------------------
 
@@ -398,8 +534,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(6, '::1', NULL, '$2y$10$GPWCBUEYxd0fxjQDfZ3GyuYvfI8qTLb/E8l.QnvUP.9/LgFqgWqQe', 'admin@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1646561458, 1650154154, 1, 'Admin', 'nistrator', 'Sekolah', '0812638172'),
-(11, '', 'admin12', '$2y$10$u9DRpp8h3idMa7zXyzo7BeT1dPDZ8YkMmGhOa1aRBVVe8uQ9nfaUO', 'admin2@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1650156001, 1, 'Admin2', 'subadmin2', 'UNCP', '0812638172');
+(6, '::1', NULL, '$2y$10$GPWCBUEYxd0fxjQDfZ3GyuYvfI8qTLb/E8l.QnvUP.9/LgFqgWqQe', 'admin@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1646561458, 1655383434, 1, 'Admin', 'nistrator', 'Sekolah', '0812638172'),
+(11, '', 'admin12', '$2y$10$u9DRpp8h3idMa7zXyzo7BeT1dPDZ8YkMmGhOa1aRBVVe8uQ9nfaUO', 'admin2@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1655383400, 1, 'Admin2', 'subadmin2', 'UNCP', '0812638172'),
+(17, '', 'user', '$2y$10$Sj0BTIVA.MWNKmUBWhsMFu/iKWmAm.JOE7gc2t39tSkFI/RbknTya', 'user@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1655384483, 1, 'User', 'user', 'User', '0812314231');
 
 -- --------------------------------------------------------
 
@@ -419,7 +556,8 @@ CREATE TABLE `users_groups` (
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (7, 6, 1),
-(16, 11, 2);
+(16, 11, 2),
+(22, 17, 4);
 
 -- --------------------------------------------------------
 
@@ -690,55 +828,55 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT untuk tabel `alternatif`
 --
 ALTER TABLE `alternatif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `baris_dua`
 --
 ALTER TABLE `baris_dua`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `baris_dua_alternatif`
 --
 ALTER TABLE `baris_dua_alternatif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `baris_satu`
 --
 ALTER TABLE `baris_satu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `baris_satu_alternatif`
 --
 ALTER TABLE `baris_satu_alternatif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `baris_tiga`
 --
 ALTER TABLE `baris_tiga`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `baris_tiga_alternatif`
 --
 ALTER TABLE `baris_tiga_alternatif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `evn_normalisasi`
 --
 ALTER TABLE `evn_normalisasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `evn_normalisasi_alternatif`
 --
 ALTER TABLE `evn_normalisasi_alternatif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `groups`
@@ -756,13 +894,13 @@ ALTER TABLE `jenis_mangrove`
 -- AUTO_INCREMENT untuk tabel `jenis_tanah`
 --
 ALTER TABLE `jenis_tanah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `kriteria`
 --
 ALTER TABLE `kriteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `login_attempts`
@@ -780,43 +918,43 @@ ALTER TABLE `nilai_frekuensi`
 -- AUTO_INCREMENT untuk tabel `perbandingan`
 --
 ALTER TABLE `perbandingan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `perbandingan_dua`
 --
 ALTER TABLE `perbandingan_dua`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `rasio_konsistensi`
 --
 ALTER TABLE `rasio_konsistensi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `rasio_konsistensi_alternatif`
 --
 ALTER TABLE `rasio_konsistensi_alternatif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_visitor`
 --
 ALTER TABLE `tb_visitor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_access_menu`
